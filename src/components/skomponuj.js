@@ -5,6 +5,8 @@ import Dodatki from '../dane';
 function Skomponuj() {
 
   const [dodatki, setDodatki] = useState([]);
+  const [koszt, setKoszt] = useState(0);
+  const [baza, setBaza] = useState(700);
 
   useEffect(() => {
     Dodatki.map(dodatek => {
@@ -15,7 +17,7 @@ function Skomponuj() {
 
   }, []);     //[] dodaje sie po to zeby metoda byla wykonana tylko 1 raz
 
-  const dodatekZmiana = (dodatek) => {
+  const dodatekZmiana = (dodatek) => {        //funkcja do klikania dodatkow
     setDodatki(
       dodatki.map(el => {
         if (el.nazwa === dodatek.nazwa) {
@@ -24,6 +26,10 @@ function Skomponuj() {
         return el;
       })
     );
+
+    setKoszt(dodatki.reduce( (suma, dodatek) => {
+      return dodatek.checked ? suma + dodatek.koszt : suma;
+    }, baza))
   }
 
 
@@ -31,7 +37,7 @@ function Skomponuj() {
     <div className='skomponuj'>
 
       <h1>Skomponuj pizzę </h1>
-      <h4>Cena: 0 zł</h4>
+      <h4>Cena: {(koszt /100).toFixed(2)} zł</h4>
       <div>
         <img className={'wielkosc mala'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
         <img className={'wielkosc srednia'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
