@@ -5,58 +5,58 @@
   },
   {
     "nazwa": "chilli",
-    "koszt": 1.00
+    "koszt": 100
   },
   {
     "nazwa": "kokos",
-    "koszt": 0.50
+    "koszt": 50
   },
   {
     "nazwa": "kukurydza",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "czosnek",
-    "koszt": 1.00
+    "koszt": 100
   },
   {
     "nazwa": "szynka",
-    "koszt": 3.00
+    "koszt": 300
   },
   {
     "nazwa": "mozzarella",
-    "koszt": 3.00
+    "koszt": 300
   },
   {
     "nazwa": "pieczarki",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "oliwki",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "cebula",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "papryka",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "pepperoni",
-    "koszt": 3.00
+    "koszt": 300
   },
   {
     "nazwa": "ananas",
-    "koszt": 2.00
+    "koszt": 200
   },
   {
     "nazwa": "krewetki",
-    "koszt": 4.00
+    "koszt": 400
   },
   {
     "nazwa": "pomidor",
-    "koszt": 2.00
+    "koszt": 200
   }
 ]

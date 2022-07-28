@@ -16,3 +16,23 @@
 .content{
   display: flex;
 }
+
+.dodatek_ikonka{
+  width: 50px;
+  height: 50px;
+}
+
+.dodatki{
+  display: grid;                                /*ustawienie dodatkow w kolemnie fr okresla ilosc koumn*/
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.dodatekRzad{
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.dodatekRzad p:last-child{
+  margin-left: auto;             /*auto przesuwa obrazek do prawej strony max*/
+}
