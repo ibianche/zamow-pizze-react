@@ -36,3 +36,52 @@
 .dodatekRzad p:last-child{
   margin-left: auto;             /*auto przesuwa obrazek do prawej strony max*/
 }
+
+.wielkosc {
+  width: 60px;
+  height: 60px;
+  margin: 0 20px;
+  cursor: pointer;          /*zmienia sie kursor po najechaniu*/
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.wielkosc.mala{
+  width: 50px;
+  height: 50px;
+}
+
+.wielkosc.duza{
+  width: 70px;
+  height: 70px;
+}
+
+.skomponuj{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dodatki{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 1/3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
