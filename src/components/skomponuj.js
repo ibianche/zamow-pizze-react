@@ -7,8 +7,24 @@ function Skomponuj() {
   const [dodatki, setDodatki] = useState([]);
 
   useEffect(() => {
+    Dodatki.map(dodatek => {
+      dodatek.checked = dodatek.koszt === 0 ? true : false;
+      return dodatek
+    })
+    setDodatki(Dodatki);
 
   }, []);     //[] dodaje sie po to zeby metoda byla wykonana tylko 1 raz
+
+  const dodatekZmiana = (dodatek) => {
+    setDodatki(
+      dodatki.map(el => {
+        if (el.nazwa === dodatek.nazwa) {
+          el.checked = !el.checked;
+        }
+        return el;
+      })
+    );
+  }
 
 
   return (
@@ -22,14 +38,14 @@ function Skomponuj() {
         <img className={'wielkosc duza'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
       </div>
       <div>
-      <button>Dodaj</button>
+        <button>Dodaj</button>
       </div>
 
       <div className='dodatki'>
-        {Dodatki.map((dodatek, index) => {  //pobieramy elementy z dane.json   dodatek tworzymy sami to jest kazdy element tablicy
+        {dodatki.map((dodatek, index) => {  //pobieramy elementy z dane.json   dodatek tworzymy sami to jest kazdy element tablicy
           return (    //zwraca kazdy element z dane.json
             <div key={index} className='dodatekRzad'>
-              <input type='checkbox'/>
+              <input type='checkbox' checked={dodatek.checked} onChange={() => dodatekZmiana(dodatek)}/>
               <img className='dodatek_ikonka' src={process.env.PUBLIC_URL + '/assets/' + dodatek.nazwa + '.png'}
                    alt={dodatek.nazwa}/>
               <p>{dodatek.nazwa}</p>
