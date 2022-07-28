@@ -8,9 +8,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Zamów pizzę </h1>
-        <Skomponuj/>
-        <Zamowienie/>
       </header>
+      <div className='content'>
+      <Skomponuj/>
+      <Zamowienie/>
+      </div>
     </div>
   );
 }
