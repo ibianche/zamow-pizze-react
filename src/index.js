@@ -20,8 +20,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}/>
-        <Route path="/koszyk" element={<Koszyk />}/>
+        <Route path="/" element={<App/>}/>
+        <Route path="/koszyk" element={<Koszyk/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
