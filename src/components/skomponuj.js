@@ -51,13 +51,21 @@ function Skomponuj(props) {
       wielkosc: wielkosc,
       koszt: koszt,
       dodatki: []
-    }
+    };
 
 
     dodatki.forEach(dodatek => {           //dodatek bierzemy z map
       if (dodatek.checked) pizza.dodatki.push(dodatek);     //dodajemy do obiektu pizaa.dodatki
     });
     props.otrzymajPizze(pizza);
+    resetujPizze();
+  };
+
+  const resetujPizze = () => {
+    dodatki.forEach(dodatek => {
+      dodatek.koszt === 0 ? dodatek.checked = true : dodatek.checked = false;
+    })
+    setBaza(700);
   };
 
 

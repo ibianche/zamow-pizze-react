@@ -26,7 +26,10 @@ function Zamowienie(props) {
         return (
           <div key={index}>
             <h3>
-              {index + 1}# {pizza.wielkosc}
+              {index + 1}# {pizza.wielkosc} pizza
+              ({pizza.dodatki.length} <IleDodatkow ilosc={pizza.dodatki.length} />)
+              &nbsp; | &nbsp;
+              {(pizza.koszt / 100).toFixed(2)}zł
             </h3>
           </div>
         )
@@ -35,6 +38,16 @@ function Zamowienie(props) {
       <p>Do zapłaty: {(koszt / 100).toFixed(2)}zł</p>
     </div>
   );
+}
+
+
+function IleDodatkow({ilosc}) {
+  if(ilosc === 1){
+    return 'dodatek';
+  } else if (ilosc > 1 && ilosc < 5){
+    return 'dodatki';
+  }
+  return 'dodatków';
 }
 
 export default Zamowienie;
