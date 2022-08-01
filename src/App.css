@@ -33,7 +33,12 @@
   padding: 0 30px;
 }
 
-.dodatekRzad p:last-child{
+.zamowienieRzad{
+  display: flex;
+  padding-right: 20px;
+}
+
+.dodatekRzad p:last-child, zamowienieRzad h3:last-child{
   margin-left: auto;             /*auto przesuwa obrazek do prawej strony max*/
 }
 

@@ -19,18 +19,25 @@ function Zamowienie(props) {
   }, [zamowienie]);            //useEffect wykona sie kiedy zmienimy zamowienie
 
 
+  const usunPizze = indx => {
+    let zam = zamowienie.filter((pizza, index) => index !== indx);
+    setZamowienie(zam);
+  };
+
+
   return (
-    <div>
+    <div style={{'flexGrow': 1}}>
       <h1>Twoje zamówienie</h1>
       {zamowienie.map((pizza, index) => {
         return (
-          <div key={index}>
+          <div key={index} className='zamowienieRzad'>
             <h3>
               {index + 1}# {pizza.wielkosc} pizza
-              ({pizza.dodatki.length} <IleDodatkow ilosc={pizza.dodatki.length} />)
+              ({pizza.dodatki.length} <IleDodatkow ilosc={pizza.dodatki.length}/>)
               &nbsp; | &nbsp;
               {(pizza.koszt / 100).toFixed(2)}zł
             </h3>
+            <h3 onClick={() => usunPizze(index)}>X</h3>
           </div>
         )
       })}
@@ -42,9 +49,9 @@ function Zamowienie(props) {
 
 
 function IleDodatkow({ilosc}) {
-  if(ilosc === 1){
+  if (ilosc === 1) {
     return 'dodatek';
-  } else if (ilosc > 1 && ilosc < 5){
+  } else if (ilosc > 1 && ilosc < 5) {
     return 'dodatki';
   }
   return 'dodatków';
