@@ -56,6 +56,10 @@
   height: 70px;
 }
 
+.wielkosc.zaznaczone{
+  background-color: red;
+}
+
 .skomponuj{
   display: grid;
   grid-template-columns: 1fr 1fr;

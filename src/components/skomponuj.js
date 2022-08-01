@@ -12,10 +12,18 @@ function Skomponuj() {
     Dodatki.map(dodatek => {
       dodatek.checked = dodatek.koszt === 0 ? true : false;
       return dodatek
-    })
+    });
     setDodatki(Dodatki);
 
   }, []);     //[] dodaje sie po to zeby metoda byla wykonana tylko 1 raz
+
+
+
+  useEffect( () =>{                           //wykonywana kiedy zmeni sie baza lub dodatki
+    setKoszt(dodatki.reduce( (suma, dodatek) => {
+      return dodatek.checked ? suma + dodatek.koszt : suma;
+    }, baza))
+  }, [baza, dodatki]);
 
   const dodatekZmiana = (dodatek) => {        //funkcja do klikania dodatkow
     setDodatki(
@@ -27,10 +35,11 @@ function Skomponuj() {
       })
     );
 
-    setKoszt(dodatki.reduce( (suma, dodatek) => {
-      return dodatek.checked ? suma + dodatek.koszt : suma;
-    }, baza))
-  }
+  };
+
+  const zmienRozmiar = (rozmiar) => {
+    setBaza(rozmiar)
+  };
 
 
   return (
@@ -39,9 +48,12 @@ function Skomponuj() {
       <h1>Skomponuj pizzę </h1>
       <h4>Cena: {(koszt /100).toFixed(2)} zł</h4>
       <div>
-        <img className={'wielkosc mala'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
-        <img className={'wielkosc srednia'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
-        <img className={'wielkosc duza'} src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
+        <img className={'wielkosc mala ' + (baza === 600 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(600)}
+             src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
+        <img className={'wielkosc srednia ' + (baza === 700 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(700)}
+             src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_sredni'/>
+        <img className={'wielkosc duza ' + (baza === 800 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(800)}
+             src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_duzy'/>
       </div>
       <div>
         <button>Dodaj</button>
