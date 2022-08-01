@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Dodatki from '../dane';
 
 
-function Skomponuj() {
+function Skomponuj(props) {
 
   const [dodatki, setDodatki] = useState([]);
   const [koszt, setKoszt] = useState(0);
@@ -18,9 +18,8 @@ function Skomponuj() {
   }, []);     //[] dodaje sie po to zeby metoda byla wykonana tylko 1 raz
 
 
-
-  useEffect( () =>{                           //wykonywana kiedy zmeni sie baza lub dodatki
-    setKoszt(dodatki.reduce( (suma, dodatek) => {
+  useEffect(() => {                           //wykonywana kiedy zmeni sie baza lub dodatki
+    setKoszt(dodatki.reduce((suma, dodatek) => {
       return dodatek.checked ? suma + dodatek.koszt : suma;
     }, baza))
   }, [baza, dodatki]);
@@ -41,22 +40,42 @@ function Skomponuj() {
     setBaza(rozmiar)
   };
 
+  const dodajPizza = () => {
+    let wielkosc = 'Średnia';
+    if (baza === 600) {
+      wielkosc = 'Mała';
+    } else if (baza === 800) {
+      wielkosc = 'Duza';
+    }
+    let pizza = {
+      wielkosc: wielkosc,
+      koszt: koszt,
+      dodatki: []
+    }
+
+
+    dodatki.forEach(dodatek => {           //dodatek bierzemy z map
+      if (dodatek.checked) pizza.dodatki.push(dodatek);     //dodajemy do obiektu pizaa.dodatki
+    });
+    props.otrzymajPizze(pizza);
+  };
+
 
   return (
     <div className='skomponuj'>
 
       <h1>Skomponuj pizzę </h1>
-      <h4>Cena: {(koszt /100).toFixed(2)} zł</h4>
+      <h4>Cena: {(koszt / 100).toFixed(2)} zł</h4>
       <div>
-        <img className={'wielkosc mala ' + (baza === 600 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(600)}
+        <img className={'wielkosc mala ' + (baza === 600 ? 'zaznaczone' : '')} onClick={() => zmienRozmiar(600)}
              src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
-        <img className={'wielkosc srednia ' + (baza === 700 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(700)}
+        <img className={'wielkosc srednia ' + (baza === 700 ? 'zaznaczone' : '')} onClick={() => zmienRozmiar(700)}
              src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_sredni'/>
-        <img className={'wielkosc duza ' + (baza === 800 ? 'zaznaczone': '')} onClick={() => zmienRozmiar(800)}
+        <img className={'wielkosc duza ' + (baza === 800 ? 'zaznaczone' : '')} onClick={() => zmienRozmiar(800)}
              src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_duzy'/>
       </div>
       <div>
-        <button>Dodaj</button>
+        <button onClick={() => dodajPizza()}>Dodaj</button>
       </div>
 
       <div className='dodatki'>

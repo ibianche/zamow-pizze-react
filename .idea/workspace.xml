@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="35060608-11d6-4aae-971c-e19f08b4afb2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/skomponuj.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/skomponuj.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +23,26 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/skomponuj.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-260">
-              <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+            <state relative-caret-position="463">
+              <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,10 +72,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/components/zamowienie.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/dane.json" />
-        <option value="$PROJECT_DIR$/src/components/skomponuj.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/skomponuj.js" />
       </list>
     </option>
   </component>
@@ -142,18 +157,18 @@
       <option name="presentableId" value="Default" />
       <updated>1659004109646</updated>
       <workItem from="1659004110844" duration="17783000" />
-      <workItem from="1659344003472" duration="1041000" />
+      <workItem from="1659344003472" duration="2851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18824000" />
+    <option name="totallyTimeSpent" value="20634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -180,16 +195,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/logo.svg" />
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/cheese.png" />
     <entry file="file://$PROJECT_DIR$/public/assets/icons8-paprika-48.png" />
     <entry file="file://$PROJECT_DIR$/src/dane.json">
@@ -225,10 +230,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/skomponuj.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+        <state relative-caret-position="463">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
