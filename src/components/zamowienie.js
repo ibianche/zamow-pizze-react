@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 
 
 function Zamowienie(props) {
@@ -25,9 +25,9 @@ function Zamowienie(props) {
     setZamowienie(zam);
   };
 
-  const zaplac = () => {
-    props.history.push('/koszyk');        //history dot elementu withRouter
-  };
+  // const zaplac = () => {
+  //   props.history.push('/koszyk');        //history dot elementu withRouter
+  // };
 
 
   return (
@@ -48,7 +48,7 @@ function Zamowienie(props) {
       })}
       <p>---------------</p>
       <p>Do zapłaty: {(koszt / 100).toFixed(2)}zł</p>
-      <button onClick={() => zaplac()}>Zapłać</button>
+      {/*<button onClick={() => zaplac()}>Zapłać</button>*/}
     </div>
   );
 }
@@ -63,4 +63,4 @@ function IleDodatkow({ilosc}) {
   return 'dodatków';
 }
 
-export default withRouter(Zamowienie);
+export default Zamowienie;
