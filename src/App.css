@@ -3,7 +3,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  /*background: url("assets/background.jpg");*/
   height: 300px;
   display: flex;
   flex-direction: column;

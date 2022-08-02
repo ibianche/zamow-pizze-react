@@ -13,7 +13,8 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: "url('assets/background.jpg')",backgroundSize: 'cover', width: '100vw',
+      height: '40vh', backgroundPosition:' 0px -500px'}}>
       <header className="App-header">
         <h1>Zamów pizzę </h1>
       </header>

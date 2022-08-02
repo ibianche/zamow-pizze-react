@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 function Zamowienie(props) {
@@ -26,7 +26,7 @@ function Zamowienie(props) {
   };
 
   // const zaplac = () => {
-  //   props.history.push('/koszyk');        //history dot elementu withRouter
+  //   props.history.push('/koszyk');
   // };
 
 
