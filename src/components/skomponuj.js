@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Dodatki from '../dane';
+import Cena from "./cena";
 
 
 function Skomponuj(props) {
@@ -73,7 +74,7 @@ function Skomponuj(props) {
     <div className='skomponuj'>
 
       <h1>Skomponuj pizzę </h1>
-      <h4>Cena: {(koszt / 100).toFixed(2)} zł</h4>
+      <h4>Cena: <Cena cena={koszt}/></h4>
       <div>
         <img className={'wielkosc mala ' + (baza === 600 ? 'zaznaczone' : '')} onClick={() => zmienRozmiar(600)}
              src={process.env.PUBLIC_URL + '/assets/size.png'} alt='rozmiar_mały'/>
@@ -94,7 +95,7 @@ function Skomponuj(props) {
               <img className='dodatek_ikonka' src={process.env.PUBLIC_URL + '/assets/' + dodatek.nazwa + '.png'}
                    alt={dodatek.nazwa}/>
               <p>{dodatek.nazwa}</p>
-              {dodatek.koszt === 0 ? <p>Free</p> : <p>{(dodatek.koszt / 100).toFixed(2)}zł</p>}
+              {dodatek.koszt === 0 ? <p>Free</p> : <p><Cena cena={dodatek.koszt}/></p>}
             </div>    // /* kluczem jest index z map, poniewaz kazdy element z map ma swoj index ktory jest unikalny*
           )
         })}

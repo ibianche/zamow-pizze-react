@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { withRouter } from 'react-router-dom';
+import Cena from './cena';
 
 
 function Zamowienie(props) {
@@ -40,14 +41,15 @@ function Zamowienie(props) {
               {index + 1}# {pizza.wielkosc} pizza
               ({pizza.dodatki.length} <IleDodatkow ilosc={pizza.dodatki.length}/>)
               &nbsp; | &nbsp;
-              {(pizza.koszt / 100).toFixed(2)}zł
+              {/*{(pizza.koszt / 100).toFixed(2)}zł*/}
+              <Cena cena={pizza.koszt}/>
             </h3>
             <h3 onClick={() => usunPizze(index)}>X</h3>
           </div>
         )
       })}
       <p>---------------</p>
-      <p>Do zapłaty: {(koszt / 100).toFixed(2)}zł</p>
+      <p>Do zapłaty: <Cena cena={koszt}/></p>
       <button>Zapłać</button>
     </div>
   );
