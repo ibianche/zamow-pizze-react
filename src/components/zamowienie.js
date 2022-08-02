@@ -48,7 +48,7 @@ function Zamowienie(props) {
       })}
       <p>---------------</p>
       <p>Do zapłaty: {(koszt / 100).toFixed(2)}zł</p>
-      {/*<button onClick={() => zaplac()}>Zapłać</button>*/}
+      <button>Zapłać</button>
     </div>
   );
 }
